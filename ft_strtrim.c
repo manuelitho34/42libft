@@ -1,36 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlongo <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/29 11:31:21 by mlongo            #+#    #+#             */
-/*   Updated: 2023/03/29 12:16:43 by mlongo           ###   ########.fr       */
+/*   Created: 2023/03/29 16:33:33 by mlongo            #+#    #+#             */
+/*   Updated: 2023/03/29 17:41:56 by mlongo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	strlcpy(char *dst, const char *src, size_t dstsize)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	i;
+	int 	end;
+	char	*res;
+	int i;
 
 	i = 0;
-	if (dstsize == 0)
-	{
-		while (src[i])
-			i++;
-		return (i);
-	}
-	while (i < (dstsize - 1) && src[i])
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	if (i < dstsize)
-		dst[i] = '\0';
-	while (src[i])
-		i++;
-	return (i);
+	end = ft_strlen(s1);
+	while (start < end && ft_strchar(set, s1[start]))
+		start++;
+	while (end && ft_strchar(set, s1[end]))
+		end--;
+	res = (char *)malloc(end - start + 2);
+	if (res == NULL)
+		return (NULL);
+	ft_strlcpy(res, *s1 + start, (end - start + 2));
+	return (res);
 }

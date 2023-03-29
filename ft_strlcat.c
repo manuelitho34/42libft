@@ -1,36 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlongo <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/29 11:31:21 by mlongo            #+#    #+#             */
-/*   Updated: 2023/03/29 12:16:43 by mlongo           ###   ########.fr       */
+/*   Created: 2023/03/29 12:18:03 by mlongo            #+#    #+#             */
+/*   Updated: 2023/03/29 12:59:25 by mlongo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-size_t	strlcpy(char *dst, const char *src, size_t dstsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
+	size_t	itot;
 	size_t	i;
 
 	i = 0;
+	itot = 0;
+	while (dst[itot])
+		itot++;
 	if (dstsize == 0)
 	{
 		while (src[i])
 			i++;
 		return (i);
 	}
-	while (i < (dstsize - 1) && src[i])
+	while (dstsize > (i + itot) && src[i])
 	{
-		dst[i] = src[i];
+		dst[itot + i] = src[i];
+		itot++;
 		i++;
 	}
-	if (i < dstsize)
-		dst[i] = '\0';
-	while (src[i])
-		i++;
-	return (i);
+    dst[itot] = '\0';
+    while (src[i])
+        i++;
+	return (i + itot);
 }

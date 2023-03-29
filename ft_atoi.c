@@ -1,36 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlongo <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/29 11:31:21 by mlongo            #+#    #+#             */
-/*   Updated: 2023/03/29 12:16:43 by mlongo           ###   ########.fr       */
+/*   Created: 2023/03/29 14:00:04 by mlongo            #+#    #+#             */
+/*   Updated: 2023/03/29 14:20:53 by mlongo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 
-size_t	strlcpy(char *dst, const char *src, size_t dstsize)
+int	ft_atoi(const char *str)
 {
-	size_t	i;
+	unsigned char	*s;
+	int 			i;
+	int				sign;
+	int				r;
 
+	s = (unsigned char *)str;
 	i = 0;
-	if (dstsize == 0)
+	sign = 1;
+	r = 0;
+	while (s[i] == ' ' || s[i] == '\n' || s[i] == '\r' 
+			|| s[i] == '\f' || s[i] == '\t' || s[i] == '\v')
+		i++;
+	if (s[i] == '+' || s[i] == '-')
 	{
-		while (src[i])
-			i++;
-		return (i);
-	}
-	while (i < (dstsize - 1) && src[i])
-	{
-		dst[i] = src[i];
+		if (s[i] == '-')
+			sign = -sign;
 		i++;
 	}
-	if (i < dstsize)
-		dst[i] = '\0';
-	while (src[i])
+	while (s[i] >= 48 && s[i] <= 57)
+	{
+		r = r * 10;
+		r = s[i] - 48;
 		i++;
-	return (i);
+	}
+	return (r * sign);
 }
