@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlongo <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mlongo <mlongo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 11:33:36 by mlongo            #+#    #+#             */
-/*   Updated: 2023/03/30 18:36:10 by mlongo           ###   ########.fr       */
+/*   Updated: 2023/03/31 15:05:17 by mlongo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
+#include "libft.h"
 
 int	is_sep(char s, char c)
 {
@@ -34,18 +33,11 @@ int	count_wrds(char *str, char c)
 	return (i);
 }
 
-char	*write_wrd(char *split, int c, char *str)
+void	ft_free(char **strs, int i)
 {
-	int	i;
-
-	i = 0;
-	while (!is_sep(str[i], c))
-	{
-		split[i] = str[i];
-		i++;
-	}
-	split[i] = 0;
-	return (split);
+	while (strs[i])
+		free(strs[i--]);
+	free(strs);
 }
 
 void	write_split(char **split, char *str, char c, int countwrds)
@@ -62,8 +54,9 @@ void	write_split(char **split, char *str, char c, int countwrds)
 		i = 0;
 		while (!is_sep(str[i], c))
 			i++;
-		split[j] = (char *)malloc(sizeof(char) * (i + 1));
-		split[j] = write_wrd(split[j], c, str);
+		split[j] = ft_substr(str, 0, i);
+		if (split[j] == NULL)
+			ft_free(split, j);
 		while (!is_sep(*str, c))
 			str++;
 		j++;
