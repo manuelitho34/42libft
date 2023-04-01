@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlongo <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: alessiolongo <alessiolongo@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 16:58:11 by mlongo            #+#    #+#             */
-/*   Updated: 2023/03/31 18:53:19 by mlongo           ###   ########.fr       */
+/*   Updated: 2023/04/01 15:13:33 by alessiolong      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
+#include "libft.h"
 
 static char	*get_malloc(int n, int cont, int *i)
 {
