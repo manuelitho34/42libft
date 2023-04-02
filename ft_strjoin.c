@@ -10,10 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strjoin(char const *s1, char const *s2)
+#include "libft.h"
+
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	int		len1;
-	int 	len2;
+	int		len2;
 	char	*res;
 	int		lentot;
 

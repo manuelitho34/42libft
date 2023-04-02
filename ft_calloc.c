@@ -10,15 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void *calloc(size_t count, size_t size)
+void	*calloc(size_t count, size_t size)
 {
 	void	*res;
-	int 	cond;
+	int		cond;
 
 	cond = size * cont;
 	res = (void *)malloc(cond);
-    if (res == NULL)
-        return (NULL);
+	if (res == NULL)
+		return (NULL);
 	while (cond--)
 		((char *)res)[cond] = 0;
 	return (res);

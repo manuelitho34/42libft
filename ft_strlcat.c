@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	itot;
@@ -31,8 +33,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 		itot++;
 		i++;
 	}
-    dst[itot] = '\0';
-    while (src[i])
-        i++;
+	dst[itot] = '\0';
+	while (src[i])
+		i++;
 	return (i + itot);
 }

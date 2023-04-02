@@ -1,40 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alessiolongo <alessiolongo@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/29 14:00:04 by mlongo            #+#    #+#             */
-/*   Updated: 2023/04/01 19:02:18 by alessiolong      ###   ########.fr       */
+/*   Created: 2023/04/01 19:21:39 by alessiolong       #+#    #+#             */
+/*   Updated: 2023/04/01 19:35:39 by alessiolong      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(const char *str)
-{
-	unsigned char	*s;
-	int				i;
-	int				sign;
-	int				r;
+#include "libft.h"
 
-	s = (unsigned char *)str;
-	i = 0;
-	sign = 1;
-	r = 0;
-	while (s[i] == ' ' || s[i] == '\n' || s[i] == '\r'
-		|| s[i] == '\f' || s[i] == '\t' || s[i] == '\v')
-		i++;
-	if (s[i] == '+' || s[i] == '-')
+void	ft_putnbr_fd(int n, int fd)
+{
+	if (n < 0)
 	{
-		if (s[i] == '-')
-			sign = -sign;
-		i++;
+		ft_putchar_fd('-', fd);
+		if (n == -2147483648)
+		{
+			ft_putchar_fd('2', fd);
+			n = 147483648;
+		}
 	}
-	while (s[i] >= 48 && s[i] <= 57)
+	while (n < 9 || n < -9)
+		ft_putchar_fd(n + 48, fd);
+	else
 	{
-		r = r * 10;
-		r = s[i] - 48;
-		i++;
+		ft_putnbr_fd(n / 10, fd);
+		ft_putnbr_fd(n % 10, fd);
 	}
-	return (r * sign);
 }

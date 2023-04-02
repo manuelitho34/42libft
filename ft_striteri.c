@@ -1,40 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alessiolongo <alessiolongo@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/29 14:00:04 by mlongo            #+#    #+#             */
-/*   Updated: 2023/04/01 19:02:18 by alessiolong      ###   ########.fr       */
+/*   Created: 2023/04/01 15:52:20 by alessiolong       #+#    #+#             */
+/*   Updated: 2023/04/01 15:57:28 by alessiolong      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(const char *str)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	unsigned char	*s;
-	int				i;
-	int				sign;
-	int				r;
+	unsigned int	i;
 
-	s = (unsigned char *)str;
+	if (!s || !f)
+		return ;
 	i = 0;
-	sign = 1;
-	r = 0;
-	while (s[i] == ' ' || s[i] == '\n' || s[i] == '\r'
-		|| s[i] == '\f' || s[i] == '\t' || s[i] == '\v')
-		i++;
-	if (s[i] == '+' || s[i] == '-')
+	while (s[i])
 	{
-		if (s[i] == '-')
-			sign = -sign;
+		f(i, s[i]);
 		i++;
 	}
-	while (s[i] >= 48 && s[i] <= 57)
-	{
-		r = r * 10;
-		r = s[i] - 48;
-		i++;
-	}
-	return (r * sign);
 }
