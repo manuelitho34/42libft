@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlongo <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mlongo <mlongo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 19:04:11 by mlongo            #+#    #+#             */
-/*   Updated: 2023/03/28 19:06:28 by mlongo           ###   ########.fr       */
+/*   Updated: 2023/04/03 16:42:18 by mlongo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	size_t		j;
 
 	i = 0;
+	if (haystack == NULL && !len)
+		return (0);
 	if (*needle == '\0' || needle == NULL)
 		return ((char *)haystack);
 	while (haystack[i] != '\0' && i < len)

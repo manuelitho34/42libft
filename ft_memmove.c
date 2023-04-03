@@ -6,7 +6,7 @@
 /*   By: mlongo <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 17:22:39 by mlongo            #+#    #+#             */
-/*   Updated: 2023/03/28 17:53:28 by mlongo           ###   ########.fr       */
+/*   Updated: 2023/04/03 15:34:53 by mlongo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	s = (char *)src;
 	d = (char *)dst;
 	i = 0;
-	if(!d && !s)
+	if (!d && !s)
 		return (dst);
 	if (d > s)
 		while (len-- > 0)

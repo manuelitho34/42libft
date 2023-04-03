@@ -6,7 +6,7 @@
 /*   By: mlongo <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 15:52:57 by mlongo            #+#    #+#             */
-/*   Updated: 2023/03/29 16:17:52 by mlongo           ###   ########.fr       */
+/*   Updated: 2023/04/03 12:34:54 by mlongo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	res[len1 + len2] = 0;
 	lentot = len1 + len2;
-	while (lentot > len1 + 1)
+	while (lentot > len1)
 		res[--lentot] = s2[--len2];
 	while (len1--)
 		res[len1] = s1[len1];

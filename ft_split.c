@@ -6,18 +6,18 @@
 /*   By: mlongo <mlongo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 11:33:36 by mlongo            #+#    #+#             */
-/*   Updated: 2023/03/31 15:05:17 by mlongo           ###   ########.fr       */
+/*   Updated: 2023/04/03 13:13:51 by mlongo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	is_sep(char s, char c)
+static int	is_sep(char s, char c)
 {
 	return (s == c || s == 0);
 }
 
-int	count_wrds(char *str, char c)
+static int	count_wrds(char *str, char c)
 {
 	int	i;
 
@@ -33,14 +33,14 @@ int	count_wrds(char *str, char c)
 	return (i);
 }
 
-void	ft_free(char **strs, int i)
+static void	ft_free(char **strs, int i)
 {
 	while (strs[i])
 		free(strs[i--]);
 	free(strs);
 }
 
-void	write_split(char **split, char *str, char c, int countwrds)
+static void	write_split(char **split, char *str, char c, int countwrds)
 {
 	int	i;
 	int	j;

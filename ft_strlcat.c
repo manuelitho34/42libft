@@ -3,38 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlongo <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mlongo <mlongo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 12:18:03 by mlongo            #+#    #+#             */
-/*   Updated: 2023/03/29 12:59:25 by mlongo           ###   ########.fr       */
+/*   Updated: 2023/04/03 15:43:51 by mlongo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t size)
 {
-	size_t	itot;
+	int		lenght;
 	size_t	i;
+	size_t	j;
 
-	i = 0;
-	itot = 0;
-	while (dst[itot])
-		itot++;
-	if (dstsize == 0)
+	if (size == 0)
+		return (ft_strlen(src));
+	lenght = ft_strlen(src) + ft_strlen(dst);
+	i = ft_strlen(dst);
+	j = 0;
+	while (src[j] && j + i < size - 1)
 	{
-		while (src[i])
-			i++;
-		return (i);
+		dst[j + i] = src[j];
+		j++;
 	}
-	while (dstsize > (i + itot) && src[i])
-	{
-		dst[itot + i] = src[i];
-		itot++;
-		i++;
-	}
-	dst[itot] = '\0';
-	while (src[i])
-		i++;
-	return (i + itot);
+	if (i < size || !size)
+		dst[j + i] = 0;
+	else
+		return (ft_strlen(src) + size);
+	return (lenght);
 }

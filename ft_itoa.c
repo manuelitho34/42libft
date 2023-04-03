@@ -6,7 +6,7 @@
 /*   By: alessiolongo <alessiolongo@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 16:58:11 by mlongo            #+#    #+#             */
-/*   Updated: 2023/04/01 15:13:33 by alessiolong      ###   ########.fr       */
+/*   Updated: 2023/04/03 13:23:06 by mlongo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,16 @@ static char	*get_malloc(int n, int cont, int *i)
 	char	*str;
 
 	if (n >= 0)
+	{
 		str = (char *)malloc(cont + 1);
+		if (str == NULL)
+			return (NULL);
+	}
 	else
 	{
 		str = (char *)malloc(cont + 2);
+		if (str == NULL)
+			return (NULL);
 		str[*i] = '-';
 		*i = *i + 1;
 	}
@@ -72,6 +78,8 @@ char	*ft_itoa(int n)
 		}
 	}
 	str = get_malloc(n, cont, &i);
+	if (str == NULL)
+		return (NULL);
 	str = fill_array(str, n, &i);
 	str[i] = 0;
 	return (str);
