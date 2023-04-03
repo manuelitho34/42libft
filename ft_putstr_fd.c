@@ -17,11 +17,9 @@ void	ft_putstr_fd(char *s, int fd)
 	int	i;
 
 	i = 0;
-	if (!s)
-		return (NULL);
 	while (s[i])
 	{
-		ft_putstr_fd(s[i], fd);
+		ft_putchar_fd(s[i], fd);
 		i++;
 	}
 }

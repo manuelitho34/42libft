@@ -10,12 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*calloc(size_t count, size_t size)
+#include "libft.h"
+
+void	*ft_calloc(size_t count, size_t size)
 {
 	void	*res;
 	int		cond;
 
-	cond = size * cont;
+	cond = size * count;
 	res = (void *)malloc(cond);
 	if (res == NULL)
 		return (NULL);

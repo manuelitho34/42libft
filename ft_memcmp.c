@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	size_t			i;
@@ -19,7 +21,11 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	b1 = (unsigned char *)s1;
 	b2 = (unsigned char *)s2;
 	i = 0;
-	while (i < n && b1[i] && b2[i] && b1[i] == b2[i])
+	while (i < n)
+	{
+		if (b1[i] != b2[i])
+			return (b1[i] - b2[i]);
 		i++;
-	return (b1[i] - b2[i]);
+	}
+	return (0);
 }

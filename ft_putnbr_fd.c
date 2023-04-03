@@ -23,7 +23,7 @@ void	ft_putnbr_fd(int n, int fd)
 			n = 147483648;
 		}
 	}
-	while (n < 9 || n < -9)
+	if (n < 9 || n < -9)
 		ft_putchar_fd(n + 48, fd);
 	else
 	{

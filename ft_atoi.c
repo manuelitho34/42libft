@@ -33,7 +33,7 @@ int	ft_atoi(const char *str)
 	while (s[i] >= 48 && s[i] <= 57)
 	{
 		r = r * 10;
-		r = s[i] - 48;
+		r = r + s[i] - 48;
 		i++;
 	}
 	return (r * sign);
