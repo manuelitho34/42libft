@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlongo <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mlongo <mlongo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/29 15:19:09 by mlongo            #+#    #+#             */
-/*   Updated: 2023/04/03 16:06:04 by mlongo           ###   ########.fr       */
+/*   Created: 2023/03/29 15:16:42 by mlongo            #+#    #+#             */
+/*   Updated: 2023/04/04 15:17:21 by mlongo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,14 @@
 void	*ft_calloc(size_t count, size_t size)
 {
 	void	*res;
-	size_t	cond;
+	int		len;
 
-	cond = size * count;
-	res = (void *)malloc(cond);
+	if (count == SIZE_MAX || size == SIZE_MAX)
+		return (NULL);
+	len = count * size;
+	res = (void *) malloc(len);
 	if (res == NULL)
 		return (NULL);
-	while (cond--)
-		((char *)res)[cond] = 0;
-	return ((void *)res);
+	ft_bzero(res, len);
+	return (res);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlongo <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mlongo <mlongo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/29 15:52:57 by mlongo            #+#    #+#             */
-/*   Updated: 2023/04/03 12:34:54 by mlongo           ###   ########.fr       */
+/*   Created: 2023/03/29 15:45:20 by mlongo            #+#    #+#             */
+/*   Updated: 2023/04/04 16:49:30 by mlongo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,26 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int		len1;
-	int		len2;
 	char	*res;
-	int		lentot;
+	size_t	i;
 
-	len1 = ft_strlen((char *)s1);
-	len2 = ft_strlen((char *)s2);
-	res = (char *)malloc(len1 + len2 + 1);
+	if (!s1 || !s2)
+		return (NULL);
+	res = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (res == NULL)
 		return (NULL);
-	res[len1 + len2] = 0;
-	lentot = len1 + len2;
-	while (lentot > len1)
-		res[--lentot] = s2[--len2];
-	while (len1--)
-		res[len1] = s1[len1];
+	i = 0;
+	res[ft_strlen(s1) + ft_strlen(s2)] = 0;
+	while (i < ft_strlen(s1))
+	{
+		res[i] = s1[i];
+		i++;
+	}
+	i = 0;
+	while (i < ft_strlen(s2))
+	{
+		res[ft_strlen(s1) + i] = s2[i];
+		i++;
+	}
 	return (res);
 }

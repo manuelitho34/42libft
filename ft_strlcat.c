@@ -5,31 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlongo <mlongo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/29 12:18:03 by mlongo            #+#    #+#             */
-/*   Updated: 2023/04/03 15:43:51 by mlongo           ###   ########.fr       */
+/*   Created: 2023/03/29 14:53:17 by mlongo            #+#    #+#             */
+/*   Updated: 2023/04/04 13:10:44 by mlongo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	int		lenght;
+	size_t	dstlen;
 	size_t	i;
-	size_t	j;
 
 	if (size == 0)
 		return (ft_strlen(src));
 	lenght = ft_strlen(src) + ft_strlen(dst);
-	i = ft_strlen(dst);
-	j = 0;
-	while (src[j] && j + i < size - 1)
+	dstlen = ft_strlen(dst);
+	i = 0;
+	while (src[i] && i + dstlen < size - 1)
 	{
-		dst[j + i] = src[j];
-		j++;
+		dst[i + dstlen] = src[i];
+		i++;
 	}
-	if (i < size || !size)
-		dst[j + i] = 0;
+	if (dstlen < size)
+		dst[i + dstlen] = 0;
 	else
 		return (ft_strlen(src) + size);
 	return (lenght);

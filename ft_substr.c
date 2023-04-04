@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlongo <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mlongo <mlongo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/03 12:04:59 by mlongo            #+#    #+#             */
-/*   Updated: 2023/04/03 15:37:09 by mlongo           ###   ########.fr       */
+/*   Created: 2023/03/29 15:27:30 by mlongo            #+#    #+#             */
+/*   Updated: 2023/04/04 16:47:11 by mlongo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	j;
 	char	*str;
 
-	str = (char *)malloc(sizeof(*s) * (len + 1));
+	if (!s)
+		return (NULL);
+	if (start >= ft_strlen(s))
+		str = ft_strdup("");
+	else if (len < ft_strlen(s) - start)
+		str = (char *) malloc(sizeof(*s) * (len + 1));
+	else
+		str = (char *) malloc(sizeof(*s) * (ft_strlen(s) - start));
 	if (!str)
 		return (NULL);
 	i = 0;
@@ -26,10 +33,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	while (s[i])
 	{
 		if (i >= start && j < len)
-		{
-			str[j] = s[i];
-			j++;
-		}
+			str[j++] = s[i];
 		i++;
 	}
 	str[j] = 0;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alessiolongo <alessiolongo@student.42.f    +#+  +:+       +#+        */
+/*   By: giovanni <giovanni@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/01 16:25:38 by alessiolong       #+#    #+#             */
-/*   Updated: 2023/04/01 18:57:35 by alessiolong      ###   ########.fr       */
+/*   Created: 2023/04/01 17:43:17 by giovanni          #+#    #+#             */
+/*   Updated: 2023/04/01 17:51:38 by giovanni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

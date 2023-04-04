@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlongo <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mlongo <mlongo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/28 18:13:48 by mlongo            #+#    #+#             */
-/*   Updated: 2023/03/28 18:19:30 by mlongo           ###   ########.fr       */
+/*   Created: 2023/03/27 17:45:32 by mlongo            #+#    #+#             */
+/*   Updated: 2023/04/04 16:41:04 by mlongo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,18 @@ void	*ft_memchr(const void *s, int c, size_t n)
 {
 	size_t			i;
 	unsigned char	*str;
-	unsigned char	to_find;
+	unsigned char	character;
 
-	i = 0;
 	str = (unsigned char *)s;
-	to_find = (unsigned char)c;
+	character = (unsigned char)c;
+	i = 0;
 	while (i < n)
 	{
-		if (str[i] == to_find)
-			return (&str[i]);
+		if (*str == character)
+		{
+			return (str);
+		}
+		str++;
 		i++;
 	}
 	return (NULL);

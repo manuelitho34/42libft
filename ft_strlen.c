@@ -5,16 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlongo <mlongo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/27 14:32:37 by mlongo            #+#    #+#             */
-/*   Updated: 2023/04/03 16:56:58 by mlongo           ###   ########.fr       */
+/*   Created: 2023/03/27 13:27:04 by mlongo            #+#    #+#             */
+/*   Updated: 2023/03/30 15:35:04 by mlongo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(const char *str)
+size_t	ft_strlen(const char *str)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (str[i])
