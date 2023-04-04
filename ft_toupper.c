@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: giovannichacondevito <giovannichacondev    +#+  +:+       +#+        */
+/*   By: mlongo <mlongo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/27 17:03:52 by gde-vito          #+#    #+#             */
-/*   Updated: 2023/04/02 08:43:23 by giovannicha      ###   ########.fr       */
+/*   Created: 2023/04/04 19:18:22 by mlongo            #+#    #+#             */
+/*   Updated: 2023/04/04 19:18:24 by mlongo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

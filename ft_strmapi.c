@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: giovannichacondevito <giovannichacondev    +#+  +:+       +#+        */
+/*   By: mlongo <mlongo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/31 13:59:44 by gde-vito          #+#    #+#             */
-/*   Updated: 2023/04/02 08:26:13 by giovannicha      ###   ########.fr       */
+/*   Created: 2023/04/04 19:17:31 by mlongo            #+#    #+#             */
+/*   Updated: 2023/04/04 19:17:32 by mlongo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gde-vito <gde-vito@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mlongo <mlongo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/27 17:22:37 by gde-vito          #+#    #+#             */
-/*   Updated: 2023/04/03 16:50:55 by gde-vito         ###   ########.fr       */
+/*   Created: 2023/04/04 19:16:18 by mlongo            #+#    #+#             */
+/*   Updated: 2023/04/04 19:16:37 by mlongo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {
