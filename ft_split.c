@@ -6,7 +6,7 @@
 /*   By: mlongo <mlongo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 19:16:11 by mlongo            #+#    #+#             */
-/*   Updated: 2023/04/04 19:16:13 by mlongo           ###   ########.fr       */
+/*   Updated: 2023/04/05 13:55:44 by mlongo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static char	*word_dup(const char *str, int start, int finish)
 	return (word);
 }
 
-int	ft_free(char **split, int i)
+static int	ft_free(char **split, int i)
 {
 	if (split[i] == NULL)
 	{
@@ -58,7 +58,7 @@ int	ft_free(char **split, int i)
 	return (0);
 }
 
-void	allocate(size_t *i, size_t *j, int *x)
+static void	allocate(size_t *i, size_t *j, int *x)
 {
 	*i = 0;
 	*j = 0;
